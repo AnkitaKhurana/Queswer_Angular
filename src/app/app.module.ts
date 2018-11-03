@@ -25,6 +25,7 @@ import { DatePipe } from '@angular/common';
 import { QuestionPageComponent } from './question/question-page/question-page.component';
 import { AnswersComponent } from './answer/answers/answers.component';
 import { AnswerEditorComponent } from './answer/answer-editor/answer-editor.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AnswerEditorComponent } from './answer/answer-editor/answer-editor.comp
     QuestionRowComponent,
     QuestionPageComponent,
     AnswersComponent,
-    AnswerEditorComponent
+    AnswerEditorComponent,
+    FooterComponent
   ],
   imports: [
     HttpModule,
