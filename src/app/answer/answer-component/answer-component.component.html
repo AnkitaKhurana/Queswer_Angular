@@ -1,0 +1,15 @@
+<div id="list-example" class="list-group box">
+    <a class="list-group-item list-group-item-action ">
+        <div class="row" id="answerBodyBox">
+            <h5 class="col-md-8" id="answerBody">{{answer.Body}}</h5>
+            <h6 class="col-md-2">Upvotes : {{answer.UpvoteCount}}</h6>
+            <h6 class="col-md-2">Downvotes : {{answer.DownvoteCount}}</h6>
+        </div>
+        <app-vote-component [answer]="answer" [Id]="Id" ></app-vote-component>
+        <div class="profileBox">
+            <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+            &nbsp; &nbsp;
+            <i class="authorLabel">{{answer.Author.Firstname}} {{answer.Author.Lastname}}</i>
+        </div>
+    </a>
+</div>

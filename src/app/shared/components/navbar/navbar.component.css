@@ -1,0 +1,24 @@
+img{
+    width: 200px;
+    height: 70px;
+}
+
+
+.navbar{
+    background-color:#4d1373 !important;
+}
+
+.nav-link{
+    color :white  !important;
+}
+
+#inputBox{
+    width: 441px;
+    text-align: center;
+}
+
+.search{
+    cursor: pointer;
+    border: white;
+    border-style: solid;
+}

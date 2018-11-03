@@ -1,0 +1,15 @@
+<div *ngIf="questions;else alternative">
+    <div *ngFor="let question of questions">
+        <app-question-row [question]="question"></app-question-row>
+    </div>
+    <p *ngIf="questions.length<=0">No Question Found</p>
+    <div class="pagination">
+        <div *ngFor="let page of totalPages">
+            <a class="page-link" (click)="updateFeed(page,$event)">{{page+1}}</a>
+        </div>
+    </div>
+    <br>
+</div>
+<ng-template #alternative>
+    <p>Loading Questions....</p>
+</ng-template>

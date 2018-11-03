@@ -1,0 +1,16 @@
+.card {
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px; /* Added */
+    margin-top: 30px;
+}
+.card-title{
+    text-align: center;
+    font-family: initial;
+    font-size: -webkit-xxx-large;
+}
+
+.btn{
+    color: white;
+    background-color: #4d1373ba !important;
+}

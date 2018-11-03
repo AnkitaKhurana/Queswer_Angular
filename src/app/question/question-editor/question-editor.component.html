@@ -1,0 +1,55 @@
+<div class="card" style="width: 60rem;">
+    <div class="card-body">
+        <h5 class="card-title">Ask Question</h5>
+        <div class="loginBox">
+            <h4>{{responseError}}</h4>
+            <form class="form-horizontal" [formGroup]="form" (ngSubmit)="ask()">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="Title" class="control-label">Title</label>
+                        <input id="Title" class="form-control mr-sm-2" type="text" placeholder="Title" aria-label="Title"
+                            formControlName="Title">
+                        <div *ngIf="Title">
+                            <div *ngIf="Title.invalid && (Title.dirty || Title.touched)">
+                                <div *ngIf="Title.errors" class="alert alert-danger">
+                                    <div *ngIf="Title.errors.pattern">Not a valid Title Id.</div>
+                                    <div *ngIf="Title.errors.required">Title is required.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="Description" class="control-label">Description</label>
+                        <textarea id="Description" class="form-control mr-sm-2" type="text" placeholder="Description"
+                            aria-label="Description" formControlName="Description"></textarea>
+                        <div *ngIf="Description">
+                            <div *ngIf="Description.invalid && (Description.dirty || Description.touched)">
+                                <div *ngIf="Description.errors" class="alert alert-danger">
+                                    <div *ngIf="Description.errors.required">Description is required.</div>
+                                    <div *ngIf="Description.errors.minLength!==null">Description must be of min 1 characters</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="Tags" class="control-label">Tags</label>
+                        <input id="Tags" class="form-control mr-sm-2" type="text" placeholder="Tags - Seperate tags by comma"
+                            aria-label="Tags" formControlName="Tags">
+                    </div>
+                </div>
+                <hr>
+                <hr>
+                <button type="submit" class="btn btn-primary col-sm-12" [disabled]="!form.valid">
+                    ASK
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</div>

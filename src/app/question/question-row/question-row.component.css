@@ -1,0 +1,56 @@
+.box{
+    margin:10px;
+}
+
+.profileBox{
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.authorLabel{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: inline-flex;
+    padding-left: 15%;
+    padding-right:0px; 
+}
+.tags{
+    float: right;
+}
+
+.tag{
+    background-color:#dce6e6;
+    margin: 1px;
+    pointer-events: none;
+}
+
+.fav{
+    text-align: right;
+}
+
+.btn{
+    background-color:#c997d6;
+    border-color: blueviolet;
+}
+
+.btn:hover{
+    background-color:blueviolet;
+}
+
+.rightBox button{
+    float: right;
+    background-color:blueviolet;
+    border-color: blueviolet;
+    margin: 2px;
+}
+
+.totalAnswersBox{
+    float: left;
+    margin-right: 5%;
+    text-align: center;
+    background-color: #f77cd2;
+    width: 115px;
+    cursor: pointer;
+}

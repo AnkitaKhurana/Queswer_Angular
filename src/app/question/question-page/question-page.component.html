@@ -1,0 +1,35 @@
+<div class="jumbotron">
+    <div *ngIf="question">
+        <div class="row">
+            <div class="col-md-9">
+                <h1 class="display-4">{{question.Title}}</h1>
+            </div>
+            <div class="col-md-3">
+                <div *ngIf=isMyQuestion>
+                    <button type="button" class="btn btn-info" routerLink="/home/question/edit/{{question.Id}}">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteQuestion()">Delete</button>
+                </div>
+            </div>
+
+        </div>
+        <p class="lead"> {{question.Description}}</p>
+        <div class="profileBox">
+            <img src="{{question.Author?.Image}}" height="20px" height="20px" alt="">
+            <pre>
+Asked by: &nbsp;{{question.Author?.Firstname}} {{question.Author?.Lastname}}
+On: &nbsp;{{question.UploadDate| date :'medium'}}
+            </pre>
+
+        </div>
+        <hr class="my-4">
+        <div class="tags" *ngFor="let tag of question.Tags">
+            <span class="btn tag">{{tag.Body}}</span>
+        </div>
+    </div>
+</div>
+<div *ngIf="question">
+    <app-answer-editor *ngIf="user" [Id]="question.Id"></app-answer-editor>
+    <app-answers  [Id]="question.Id"></app-answers>
+</div>
+<br>
+<br>

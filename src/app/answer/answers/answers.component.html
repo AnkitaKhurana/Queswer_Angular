@@ -1,0 +1,5 @@
+<div *ngIf="Id">
+    <div *ngFor="let answer of answers">
+        <app-answer [answer]="answer" [Id]="Id"></app-answer>
+    </div>
+</div>

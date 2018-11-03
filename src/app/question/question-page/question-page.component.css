@@ -1,0 +1,21 @@
+.jumbotron{
+    margin:5%;
+    background-color: #ffedfa !important
+}
+
+.profileBox{
+    display:inline-flex
+}
+
+.btn{
+    margin: 2px;
+}
+.tags{
+    float: right;
+}
+
+.tag{
+    background-color:#c997d6 !important;
+    margin: 1px;
+    pointer-events: none;
+}

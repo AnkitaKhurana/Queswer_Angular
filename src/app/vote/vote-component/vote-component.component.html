@@ -1,0 +1,14 @@
+<div class="iconBox" *ngIf="user">
+    <div *ngIf="isMyAnswer" class="myAnswerBox">
+        <i class="fa fa-edit  fa-2x" aria-hidden="true" (click)="editAnswer()"></i>
+        <div class="space"></div>
+        <i class="fa fa-trash  fa-2x" aria-hidden="true" (click)="deleteAnswer()"></i>
+    </div>
+    <div *ngIf="!isMyAnswer&&user" class="myAnswerBox">
+        <i *ngIf="!answer.Upvoted" class="fa fa-thumbs-up fa-2x select" aria-hidden="true" (click)="upvote()"></i>
+        <i *ngIf="answer.Upvoted" class="fa fa-thumbs-up fa-2x deselect" aria-hidden="true" (click)="unupvote()"></i>
+        <div class="space"></div>
+        <i *ngIf="!answer.Downvoted" class="fa fa-thumbs-down fa-2x select" aria-hidden="true" (click)="downvote()"></i>
+        <i *ngIf="answer.Downvoted" class="fa fa-thumbs-down fa-2x deselect" aria-hidden="true" (click)="undownvote()"></i>
+    </div>
+</div>

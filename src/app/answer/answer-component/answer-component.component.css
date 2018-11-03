@@ -1,0 +1,29 @@
+.box{
+    margin-left:15%;
+    margin-right:15%;
+    margin-top: 2%;
+    box-shadow: 0px -2px 2px rgba(34,34,34,0.6);
+}
+.profileBox{
+    background-color:#998c8c4a;
+    display: flex;
+    align-items : center;
+    box-shadow: 0px -2px 2px rgba(34,34,34,0.6);
+    border-radius: 35px;
+}
+
+.iconBox{
+   text-align: end;
+}
+
+.select{
+    color: darkmagenta;
+}
+.deselect{
+    color: violet;
+
+}
+.space{
+    display: inline;
+    margin:10%;
+}

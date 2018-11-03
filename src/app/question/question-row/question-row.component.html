@@ -1,0 +1,31 @@
+<div id="list-example" class="list-group box">
+  <a class="list-group-item list-group-item-action">
+      <div class="totalAnswersBox" routerLink='/home/question/{{question.Id}}'>
+          <div class="totalAnswersBoxInnerBox" >
+            <h4> {{question.TotalAnswers}}</h4>
+            <h4>Answers</h4>
+          </div>
+        </div>
+   
+    <div class="rightBox">
+      <div *ngIf=isMyQuestion>
+        <button type="button" class="btn btn-danger" (click)="deleteQuestion()"><i class="fa fa-trash"></i></button>
+        <button type="button" class="btn btn-info" routerLink="/home/question/edit/{{question.Id}}"><i class="fa fa-edit"></i></button>
+      </div>
+    </div>
+    <div class="profileBox" (click)="gotoProfile()">
+      <i class="fa fa-user-circle-o fa-3x " aria-hidden="true"></i>
+      <div class="innerBox">
+        <p class="authorLabel"><i>Asked by:</i> {{question.Author.Firstname}} {{ question.Author.Lastname}}</p>
+        <p class="authorLabel"><i>On:</i> {{UploadDate}}</p>
+      </div>
+    </div>
+    <h3>{{question.Title}}</h3>
+    <div *ngIf="question.Tags">
+      <div class="tags" *ngFor="let tag of question.Tags">
+        <span class="btn tag">{{tag.Body}}</span>
+      </div>
+    </div>
+    <button class="btn btn-info" routerLink='/home/question/{{question.Id}}'>Read More</button>
+  </a>
+</div>

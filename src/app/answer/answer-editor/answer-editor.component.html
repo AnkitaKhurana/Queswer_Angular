@@ -1,0 +1,12 @@
+<div id="list-example" class="list-group box">
+
+  <a class="list-group-item list-group-item-action ">
+    <input #myanswer type="text" class="form-control" id="answer" placeholder="Write an answer..." />
+    <div class="profileBox">
+      <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+      &nbsp; &nbsp;
+      <i class="authorLabel">{{user.Firstname}}  {{user.Lastname}}</i>
+      <button class="btn btn-success commentBtn" (click)="answer(myanswer.value)">Add Answer</button>
+    </div>
+  </a>
+</div>
