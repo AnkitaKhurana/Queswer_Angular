@@ -89,4 +89,18 @@ export class QuestionService {
         }
       ));
   }
+
+  /// **********************************************************************
+  //          Function to fetch questions for Tag
+  /// **********************************************************************
+  tagSearch(Id: string) {
+    return this.apiService.get('/tag/find/' + Id).pipe(
+      map(
+        data => {
+          this.questions.next(data.json().Questions);
+          this.totalQuestions.next(data.json().Questions.length);
+        }
+      ));
+  }
+
 }

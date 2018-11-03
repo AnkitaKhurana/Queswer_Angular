@@ -1,3 +1,11 @@
-<p>
-  tag-component works!
-</p>
+<div class="box">
+  <ul *ngIf="tags; else alternative">
+    <h4> Tags</h4>
+    <li *ngFor="let tag of tags" class="btn btn-primary" (click)="search(tag.Id)">
+      {{tag.Body}}
+    </li>
+  </ul>
+</div>
+<ng-template #alternative>
+  <p>Loading Tags....</p>
+</ng-template>

@@ -17,8 +17,7 @@ export class QuestionComponent implements OnInit {
     this.questionService.getAll(this.pageNumber, '').subscribe();
     this.questionService.questionsObservable.subscribe(questions => this.questions = questions);
     this.questionService.totalQuestionsObservable.subscribe(totalQuestions =>
-      this.totalPages = Array(Math.ceil(totalQuestions / 10)).fill(0).map((x, i) => i));
-
+      this.totalPages = Array(Math.ceil(totalQuestions / 10)).fill(0).map((x, i) => i));  
   }
 
   updateFeed(page: number, event) {

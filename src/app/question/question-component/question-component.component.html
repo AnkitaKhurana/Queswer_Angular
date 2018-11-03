@@ -3,7 +3,7 @@
         <app-question-row [question]="question"></app-question-row>
     </div>
     <p *ngIf="questions.length<=0">No Question Found</p>
-    <div class="pagination">
+    <div class="pagination" *ngIf="totalPages.length>1">
         <div *ngFor="let page of totalPages">
             <a class="page-link" (click)="updateFeed(page,$event)">{{page+1}}</a>
         </div>

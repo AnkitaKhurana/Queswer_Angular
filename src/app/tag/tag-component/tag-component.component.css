@@ -1,0 +1,13 @@
+li{
+    margin: 4px;
+    border: 10px;
+}
+.box{
+    text-align: center;   
+    margin-right: 10%;
+    margin-top: 4%;
+}
+
+.btn{
+    background-color: black;
+}
