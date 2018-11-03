@@ -20,11 +20,17 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.userService.login(this.form.value).subscribe(user => {
+      console.log(this.returnUrl)
       if (this.returnUrl != null) {
-        this.router.navigateByUrl(this.returnUrl.split('/')[1])
+        this.router.navigate([this.returnUrl]).then(value => {
+          if (value == false) {
+            this.router.navigateByUrl('/home')
+          }
+        })
       }
-      else
+      else {
         this.router.navigateByUrl('/home')
+      }
     },
       error => {
         this.responseError = JSON.parse(error._body);
