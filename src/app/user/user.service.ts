@@ -51,6 +51,21 @@ export class UserService {
           console.log(error)
         }
       ))
-
   }
+
+   /// **********************************************************************
+  //          Function to find a user 
+  /// **********************************************************************
+  find(Id: string): Observable<IUser> {
+    return this.apiService.get('/user/'+Id).pipe(
+      map(
+        data => {
+          return data.json().user;
+        },
+        error => {
+          console.log(error)
+        }
+      ))
+  }
+
 }
