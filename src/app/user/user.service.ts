@@ -53,19 +53,50 @@ export class UserService {
       ))
   }
 
-   /// **********************************************************************
+  /// **********************************************************************
   //          Function to find a user 
   /// **********************************************************************
-  find(Id: string): Observable<IUser> {
-    return this.apiService.get('/user/'+Id).pipe(
+  find(Id: string): Observable<any> {
+    return this.apiService.get('/user/' + Id).pipe(
       map(
         data => {
-          return data.json().user;
+          return data.json();
         },
         error => {
           console.log(error)
         }
       ))
   }
+
+  /// **********************************************************************
+  //          Function to follow a user 
+  /// **********************************************************************
+  follow(Id: string): Observable<any> {
+    return this.apiService.post('/follow/true/' + Id).pipe(
+      map(
+        data => {
+          return data.json();
+        },
+        error => {
+          console.log(error)
+        }
+      ))
+  }
+
+  /// **********************************************************************
+  //          Function to unfollow a user 
+  /// **********************************************************************
+  unfollow(Id: string): Observable<any> {
+    return this.apiService.delete('/follow/false/' + Id).pipe(
+      map(
+        data => {
+          return data.json();
+        },
+        error => {
+          console.log(error)
+        }
+      ))
+  }
+
 
 }

@@ -18,7 +18,6 @@ import { LoggedInComponent } from './shared/components/logged-in/logged-in.compo
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
-// import appRoutes from './app.routes';
 import { QuestionEditorComponent } from './question/question-editor/question-editor.component';
 import { QuestionRowComponent } from './question/question-row/question-row.component';
 import { DatePipe } from '@angular/common';
@@ -35,6 +34,7 @@ import { QuestionService } from './question/question.service';
 import { VoteService } from './vote/vote.service';
 import { TagService } from './tag/tag.service';
 import { AuthGuard } from './guards/auth.guard';
+import { FeedComponent } from './question/feed/feed.component';
 
 const appRoutes: Routes = [
   {
@@ -51,6 +51,7 @@ const appRoutes: Routes = [
       { path: 'profile/:id', component: UserComponent, canActivate: [AuthGuard] }
     ]
   },
+  { path: 'feed', component: FeedComponent, canActivate:[AuthGuard] },
   { path: 'profile', component: UserComponent },
   { path: 'ask', component: QuestionEditorComponent },
   { path: 'login', component: LoginComponent },
@@ -78,7 +79,8 @@ const appRoutes: Routes = [
     AnswersComponent,
     AnswerEditorComponent,
     FooterComponent,
-    LoggedOutComponent
+    LoggedOutComponent,
+    FeedComponent
   ],
   imports: [
     HttpModule,

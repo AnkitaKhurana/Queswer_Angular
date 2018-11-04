@@ -6,4 +6,5 @@ export interface IUser {
     Lastname: string ;
     Image: string;
     Password:string;
+    Following : boolean;
 }

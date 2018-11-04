@@ -13,12 +13,23 @@ export class UserComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private authService: AuthService, private userService: UserService) { }
   user: IUser;
+  isMyProfile: boolean;
+  following: boolean;
   ngOnInit() {
     if (this.activatedRoute.snapshot.url[1]) {
-      this.userService.find(this.activatedRoute.snapshot.url[1].path).subscribe(user => { this.user = user; });
+      this.isMyProfile = false;
+      this.userService.find(this.activatedRoute.snapshot.url[1].path).subscribe((data) => { this.user = data.user; this.following = data.following });
     }
     else {
+      this.isMyProfile = true;
       this.user = this.authService.user;
     }
+  }
+
+  follow() {
+    this.userService.follow(this.user.Id).subscribe(result => { if (result) this.following = true; })
+  }
+  unfollow() {
+    this.userService.unfollow(this.user.Id).subscribe(result => { if (result) this.following = false; })
   }
 }

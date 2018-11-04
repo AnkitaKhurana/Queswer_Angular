@@ -2,4 +2,8 @@
   <img src="{{user.image}}" alt="{{user.Firstname}}">
   <h1>{{user.Firstname}}  {{user.Lastname}}</h1>
   <p class="title">{{user.Email}}</p>
+  <div *ngIf="!isMyProfile">
+    <li *ngIf="!following"class="btn btn-primary" (click)="follow()">Follow</li>
+    <li *ngIf="following" class="btn btn-danger" (click)="unfollow()">Unfollow</li>
+  </div>
 </div>
