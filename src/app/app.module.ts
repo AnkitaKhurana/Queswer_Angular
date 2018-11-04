@@ -18,7 +18,7 @@ import { LoggedInComponent } from './shared/components/logged-in/logged-in.compo
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
-import appRoutes from './app.routes';
+// import appRoutes from './app.routes';
 import { QuestionEditorComponent } from './question/question-editor/question-editor.component';
 import { QuestionRowComponent } from './question/question-row/question-row.component';
 import { DatePipe } from '@angular/common';
@@ -34,7 +34,29 @@ import { AnswerService } from './answer/answer.service';
 import { QuestionService } from './question/question.service';
 import { VoteService } from './vote/vote.service';
 import { TagService } from './tag/tag.service';
+import { AuthGuard } from './guards/auth.guard';
 
+const appRoutes: Routes = [
+  {
+    path: '', component: DashboardComponent, canActivate: [AuthGuard],
+    children: [{ path: '', component: QuestionComponent, canActivate: [AuthGuard] }]
+  },
+  {
+    path: 'home',
+    component: DashboardComponent,
+    children: [
+      { path: '', component: QuestionComponent },
+      { path: 'question/:id', component: QuestionPageComponent },
+      { path: 'question/edit/:id', component: QuestionEditorComponent, canActivate: [AuthGuard] },
+      { path: 'profile/:id', component: UserComponent, canActivate: [AuthGuard] }
+    ]
+  },
+  { path: 'profile', component: UserComponent },
+  { path: 'ask', component: QuestionEditorComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
